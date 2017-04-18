@@ -16,16 +16,17 @@ hash=$1
 function change_author {
     if [ -n "$1" ] && [ -n "$2" ]; then
         echo "export GIT_COMMITTER_NAME=$1
-            export GIT_AUTHOR_NAME=$1
-            export GIT_COMMITTER_EMAIL=$2
-            export GIT_AUTHOR_EMAIL=$2"
+              export GIT_AUTHOR_NAME=$1
+              export GIT_COMMITTER_EMAIL=$2
+              export GIT_AUTHOR_EMAIL=$2"
     fi
 }
 
 # $1 - date
 function change_date {
     if [ -n "$1" ]; then
-    echo "export GIT_COMMITTER_DATE=$1"
+        echo "export GIT_AUTHOR_DATE=$1
+              export GIT_COMMITTER_DATE=$1"
     fi
 }
 
