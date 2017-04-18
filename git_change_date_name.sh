@@ -46,7 +46,7 @@ echo "2. Date"
 
 read action
 
-if [ -n "$action" ]; then
+if [ -n "$action" ] && [[ $action == *"1"* || $action == *"2"* ]]; then
     if [[ ${action} == *"1"* ]]; then
         while [[ -z "$author" ]]; do
             echo "Set commit author:"
