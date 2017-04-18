@@ -25,8 +25,9 @@ function change_author {
 # $1 - date
 function change_date {
     if [ -n "$1" ]; then
-        echo "export GIT_AUTHOR_DATE=$1
-              export GIT_COMMITTER_DATE=$1"
+        timestamp="$(date --date=$1 +%s)"
+        echo "export GIT_AUTHOR_DATE=${timestamp}
+              export GIT_COMMITTER_DATE=${timestamp}"
     fi
 }
 
@@ -60,7 +61,7 @@ if [ -n "$action" ]; then
 
     if [[ $action == *"2"* ]]; then
         while [[ -z "$date" ]]; do
-            echo "Set commit date (example: Sat, 14 Dec 2013 12:40:00 +0000):"
+            echo "Set commit date (example: 2008-02-14T12:30):"
             read date
         done
     fi
