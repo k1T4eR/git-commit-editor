@@ -68,4 +68,4 @@ else
     exit 1
 fi
 
-make_changes ${author} ${email} ${date}
+make_changes ${author:-''} ${email:-''} ${date:-''}
